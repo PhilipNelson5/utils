@@ -1,20 +1,33 @@
-#include <cstdlib>
-#include <iostream>
 #include <limits.h>
+#include <stdlib.h>
 #include <stdio.h> /* defines FILENAME_MAX */
+#include <string>
 #include <unistd.h>
 
-std::string getDirPath() // from:
-                         // http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
+// from: http://stackoverflow.com/questions/27914311/get-computer-name-and-logged-user-name
+std::string getHostName()
+{
+  char hostname[HOST_NAME_MAX];
+  gethostname(hostname, HOST_NAME_MAX);
+  return std::string(hostname);
+}
+
+std::string getLogin()
+{
+	return getenv("USER");
+}
+
+// from: http://www.codebind.com/cpp-tutorial/c-get-current-directory-linuxwindows/
+std::string getCWD()
 {
   char buff[FILENAME_MAX];
   getcwd(buff, FILENAME_MAX);
   std::string current_working_dir(buff);
-  return current_working_dir;
+  return std::string(current_working_dir);
 }
 
-std::string
-getExePath() // from: http://www.codebind.com/cpp-tutorial/c-get-current-directory-linuxwindows/
+//http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
+std::string getExePath()
 {
   char result[PATH_MAX];
   ssize_t count = readlink("/proc/self/exe", result, PATH_MAX);
