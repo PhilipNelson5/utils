@@ -1,10 +1,11 @@
 #include <limits.h>
-#include <stdlib.h>
 #include <stdio.h> /* defines FILENAME_MAX */
+#include <stdlib.h>
 #include <string>
 #include <unistd.h>
 
-// from: http://stackoverflow.com/questions/27914311/get-computer-name-and-logged-user-name
+// from:
+// http://stackoverflow.com/questions/27914311/get-computer-name-and-logged-user-name
 std::string getHostName()
 {
   char hostname[HOST_NAME_MAX];
@@ -14,10 +15,11 @@ std::string getHostName()
 
 std::string getLogin()
 {
-	return getenv("USER");
+  return getenv("USER");
 }
 
-// from: http://www.codebind.com/cpp-tutorial/c-get-current-directory-linuxwindows/
+// from:
+// http://www.codebind.com/cpp-tutorial/c-get-current-directory-linuxwindows/
 std::string getCWD()
 {
   char buff[FILENAME_MAX];
@@ -26,7 +28,7 @@ std::string getCWD()
   return std::string(current_working_dir);
 }
 
-//http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
+// http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
 std::string getExePath()
 {
   char result[PATH_MAX];

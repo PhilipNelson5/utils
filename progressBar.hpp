@@ -43,7 +43,7 @@ void printMsg(float prog, int total, std::string message)
   std::cout.flush();
 }
 
-void incProg(int &prog, int total, std::string message)
+void incProg(int& prog, int total, std::string message)
 {
   ++prog;
   printMsg(prog, total, message);
