@@ -9,7 +9,8 @@
 #include <memory>
 #include <string>
 
-// usage: std::cout << type_name<decltype(expr)>() << std::endl
+// usage: 
+// std::cout << type_name<decltype(expression)>() << std::endl;
 
 template <typename T>
 std::string type_name()
