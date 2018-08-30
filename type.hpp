@@ -1,5 +1,5 @@
-//from:
-//https://stackoverflow.com/questions/81870/is-it-possible-to-print-a-variables-type-in-standard-c
+// from:
+// https://stackoverflow.com/questions/81870/is-it-possible-to-print-a-variables-type-in-standard-c
 #include <type_traits>
 #include <typeinfo>
 #ifndef _MSC_VER
@@ -9,7 +9,7 @@
 #include <memory>
 #include <string>
 
-// usage: 
+// usage:
 // std::cout << type_name<decltype(expression)>() << std::endl;
 
 template <typename T>
